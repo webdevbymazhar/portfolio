@@ -19,7 +19,7 @@ const ContactUs = () => {
   }
   const handleSubmit = async () =>{
    try {
-    let res = await axios.post("https://porfolio-backend-kappa.vercel.app//form",data)
+    let res = await axios.post("https://portfolio-backend-inky-psi.vercel.app/form",data)
     if(res){
       toast.success("Form Submitted Successfully")
       setdata({
