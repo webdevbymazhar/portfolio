@@ -5,6 +5,7 @@ import axios from "axios"
 import toast from 'react-hot-toast'
 
 const ContactUs = () => {
+  let [loading,setloading] = useState(false)
   let [data,setdata] = useState({
     fname:'',
     lname:"",
@@ -18,7 +19,9 @@ const ContactUs = () => {
    
   }
   const handleSubmit = async () =>{
+    setloading(true)
    try {
+    
     let res = await axios.post("https://portfolio-backend-inky-psi.vercel.app/form",data)
     if(res){
       toast.success("Form Submitted Successfully")
@@ -33,6 +36,8 @@ const ContactUs = () => {
    } catch (error) {
     console.log(error);
     toast.error(error.response.data.message)
+   }finally{
+    setloading(false)
    }
  
   }
@@ -71,7 +76,11 @@ const ContactUs = () => {
     <textarea  onChange={handleData} value={data.message} placeholder='Enter Your Message...' name="message" className='form-control' id="" rows={10}></textarea>
   </div>
   </div>
-  <Button onClick={handleSubmit} style={{marginTop:"3vh"}} variant='dark'>Submit</Button>
+   {
+    loading ? <div style={{marginTop:"3vh"}} class="spinner-border" role="status">
+    <span class="sr-only"></span>
+  </div> :  <Button onClick={handleSubmit} style={{marginTop:"3vh"}} variant='dark'>Submit</Button>
+   }
 </form>
 </div>
    </Container>
