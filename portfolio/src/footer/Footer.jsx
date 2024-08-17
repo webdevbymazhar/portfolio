@@ -14,10 +14,10 @@ const Footer = () => {
 <Link to="contact-us" smooth={true} duration={500}  className='footer-link'>Contact</Link>
         </div>
         <div className='footer-icons'>
-        <Link style={{color:"white",textDecoration:"none",fontSize:"20px"}}><FaGithub/></Link>
-          <Link className='footer-link'><FaLinkedin/></Link>
-          <Link className='footer-link'><FaFacebook/></Link>
-          <Link className='footer-link'><FaInstagram/></Link>
+        <a href='https://github.com/webdevbymazhar'  target='_blank' style={{color:"white",textDecoration:"none",fontSize:"20px"}}><FaGithub/></a>
+          <a href='https://www.linkedin.com/in/mazhar-siddiqi-46464a266/' target='_blank' className='footer-link'><FaLinkedin/></a>
+          <a href='https://www.facebook.com/mazhar.siddiqi.714' target='_blank' className='footer-link'><FaFacebook/></a>
+          <a href='https://www.instagram.com/mazharsiddiqii/' target='_blank' className='footer-link'><FaInstagram/></a>
         </div>
       </div>
   )
