@@ -159,3 +159,7 @@ margin-right: 20px;
         align-items: center;
     }
 }
+
+.about-link:hover{
+    color: grey;
+}
